@@ -1,0 +1,117 @@
+<h2>Cources - {{ title }}</h2> <br>
+
+<h4>Different types of Two way  binding:</h4>
+<div class="row form-group text-left">
+    <div class="col-md-4">Custom Directive Applied: </div>
+    <div class="col-md-6"><input type="text" autoGrow [value]="inputVal" (input)="inputVal=$event.target.value"/> <strong>Preview</strong>: {{ inputVal }}</div>
+</div>
+<div class="row form-group text-left">
+    <div class="col-md-4">Using [(NgModel)] for 2 way data binding:  </div>
+    <div class="col-md-6"><input type="text" [(ngModel)]="inputVal" /> <strong>Preview</strong>: {{ inputVal }}</div>
+</div>
+<div class="row form-group text-left">
+    <div class="col-md-4">Using bindon-ngModel for 2 way data binding:  </div>
+    <div class="col-md-6"><input type="text" bindon-ngModel="inputVal" /> <strong>Preview</strong>: {{ inputVal }} </div>
+</div>
+
+<h4>*ngFor: </h4>
+<div class="row form-group text-left">
+    <p> ngFor with index of array</p>
+    <ul>
+        <li *ngFor="#course of courses, #i = index"> {{i + 1}} (this is index) <strong>{{ course }}</strong> (this is value) </li>
+    </ul>
+
+    <p>* in front ngFor is acted as a template</p>
+    <ul>
+    <template ngFor [ngForOf]="courses" #course #i=index>
+        <li>{{i + 1}} {{course}}</li>
+    </template>
+    </ul>
+
+</div>
+<div class="row form-group text-left">
+    <h4>Class Binding using Class Attribute: </h4>
+    <button class="btn btn-primary" [class.active]="isActive" >Submit</button><br>
+</div>
+
+<div class="row form-group text-left">   
+    <h4>Different Types of attribute bindings:</h4>
+    <img src="{{imgUrl}}" [style.width]="isMobile ? '100px' : '200px'" title="[style.width] with terenary oprator used and src property directly used"/>
+    <img [src]="imgUrl" [style.width]="'252px'" title="[style.width] with terenary oprator used and [src] (square bracket)"/>
+    <img bind-src="imgUrl" [style.width]="'300px'" title="[style.width] with terenary oprator used and bind-src attribute is used" />
+</div>
+
+<div class="row form-group text-left">
+    <h4>Event Binding: Result in Console log</h4>
+    <div (click)="onDivClick($event)">
+        <button class="btn btn-primary" (click)="onClick($event)">Event Binding</button>
+    </div>
+</div>
+
+<div class="row form-group text-left">
+    <h4>Click Event for Rating (@input() and @Output Decorator used)</h4>
+    <i (click)="starChange()" class="glyphicon" 
+    [class.glyphicon-star-empty]="!isFavourite"
+    [class.glyphicon-star]="isFavourite" 
+    [ngClass]="isFavourite ? ['active','active-star'] : ['inacative', 'inactive-star']"
+    [style.font-size]="'40px'"
+    ></i>
+</div>
+
+<div class="row form-group text-left">
+    <h4>Click Event for liked with total likes (@input() and @Output Decorator used)</h4>
+    <i class="glyphicon" [class.glyphicon-heart]="isLiked"
+    [class.glyphicon-heart-empty]="!isLiked"
+    (click)="onHeartClick($event)"
+    [style.font-size]="'40px'"></i>
+    <p>{{totalLiked}}</p>
+</div>
+
+<div class="row form-group text-left">
+    <h4>*ngIf and [hidden] property usage</h4>
+    <p>*ngIf - it will remove the element but [hidden] propery will keep the element in the hidden state if the conditions are not statisfied</p>
+    <strong><p *ngIf="isFavourite > 0"> Favourite Item available</p></strong>
+    <strong><p [hidden]="isFavourite == 0">Favourite Item available</p></strong>
+</div>
+
+<div class="row form-group text-left">
+    <h4>*ngSwitch</h4>
+    <ul class="nav nav-pills">
+        <li [class.active]="viewMode == 'map'"><a (click)="viewMode='map'">Map View</a></li>
+        <li [class.active]="viewMode == 'list'"><a (click)="viewMode='list'">List View</a></li>
+    </ul>
+    <div [ngSwitch]="viewMode">
+        <template [ngSwitchWhen]="'map'" ngSwitchDefault>Map View Content</template>
+        <template [ngSwitchWhen]="'list'">List View Content</template>
+    </div>
+</div>
+
+<div class="row form-group text-left">
+    <h4>Pipe or Filters</h4>
+    <p>Built in pipes are- <strong>Uppercase, lowercase, currency, data, json, number</strong></p>
+    <ul>
+        <li>{{courseDetail.name | uppercase}}</li>
+        <li>{{courseDetail.students | number}}</li>
+        <li>{{courseDetail.price | currency: 'INR':true:'2.2-2'}}</li>
+        <!--<li>{{courseDetail.releaseDate | date: 'MMM yyy'}}</li>-->
+        <li>{{courseDetail | json}}</li>
+    </ul>
+    <h4>Custom Pipes or Custom Filters</h4>
+    <p [outerHTML]= " courseDetail.courseDescription | summary: 10: htmlText "> </p>
+</div>
+
+<div class="row form-group text-left">
+    <h4>Elvis Operator</h4>
+    <p>?. is elivis operator and We can achive this using *ngIf="obj.assigne !== null" or 'obj.assignee !==null ? obj.assignee : '' '</p>
+    <ul>
+        <li>{{courseDetail?.age}} (age is not present in courseDetail object hence its coming empty string)</li>
+    </ul>
+</div>
+
+<div class="row form-group text-left">
+    <h4>ng-content - ng-content is nothing but the angular 1 ng-trasclusde - ng-content helps to keep the selector's content as well</h4>
+    <ng-content></ng-content>
+    <ng-content select=".cssSelector"></ng-content>
+</div>
+
+<br>

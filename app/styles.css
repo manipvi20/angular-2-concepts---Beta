@@ -1,0 +1,7 @@
+.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+.router-link-active a, .router-link-active:hover { 
+    color: #555;
+    background-color: #e7e7e7;
+}
