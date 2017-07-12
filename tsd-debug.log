@@ -1,0 +1,27 @@
+[ERR!] cwd  : C:\mani_works\angular2-seed
+[ERR!] os   : Windows_NT 10.0.14393
+[ERR!] argv : "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\maniknat\\AppData\\Roaming\\npm\\node_modules\\tsd\\build\\cli.js" "query" "jquery.*"
+[ERR!] node : v7.10.0
+[ERR!] tsd  : 0.6.5
+[ERR!] Error: connect ETIMEDOUT 192.30.255.116:443
+[ERR!] CODE : ETIMEDOUT
+[ERR!] connect ETIMEDOUT 192.30.255.116:443
+This is most likely not a problem with tsd itself
+and is related to network connectivity.
+In most cases you are behind a proxy or have bad network settings.
+
+If you are behind a proxy, please make sure that the
+'proxy' config is set properly.  See: https://github.com/DefinitelyTyped/tsd#tsdrc
+[ERR!] 
+Error: connect ETIMEDOUT 192.30.255.116:443
+    at Object.exports._errnoException (util.js:1050:11)
+    at exports._exceptionWithHostPort (util.js:1073:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1093:14)
+
+[ERR!] tsd.json: {"version":"v4","repo":"borisyankov/DefinitelyTyped","ref":"master","path":"typings","bundle":"typings/tsd.d.ts","installed":{"jquery/jquery.d.ts":{"commit":"e69fe60f2d6377ea4fae539493997b098f52cad1"},"underscore/underscore.d.ts":{"commit":"e69fe60f2d6377ea4fae539493997b098f52cad1"}}}
+
+[ERR!] .tsdrc could not be retrieved
+
+[ERR!] Please include the following file with any support request:
+    C:\mani_works\angular2-seed\tsd-debug.log
+

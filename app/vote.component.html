@@ -1,0 +1,8 @@
+<div class="row form-group text-left">
+    <h4>Vote Concept: Input Output ElementRef and Renderer referece: </h4>
+    <ul class="vote">
+    <li><i class="glyphicon glyphicon-menu-up vote-button" (click)="onVoteUpClick($event)" [class.highlighted]="myVote == 1"></i></li>
+    <li><span class="glyphicon-text">{{totalVote + myVote}}</span></li>
+    <li><i class="glyphicon glyphicon-menu-down vote-button" (click)="onVoteDownClick($event)" [class.highlighted]="myVote == -1" ></i></li>
+    </ul>
+</div>

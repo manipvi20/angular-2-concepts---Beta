@@ -1,0 +1,25 @@
+<div class="row form-group">
+    <div class="media col-sm-12">
+        <h4>Twitter Concept: Like button and count for Individual User: ngFor, @input @Output ElementRef, Renderer, EventEmitter used </h4>
+        <div class="row twitter-user"  *ngFor="#tUser of twitterUsers">
+            <div class="media col-sm-8">
+                <div class="media-left">
+                    <a href="#">
+                    <img class="media-object img-rounded" src="{{ tUser.image }}" alt="img_{{tUser.name}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><strong>{{ tUser.name }}</strong> <span class="twitter-name">@{{ tUser.twitterName }}</span></h4>
+                    <p class="status">{{ tUser.status }}</p>
+                    <i [attr.data-twittername]="tUser.twitterName" class="glyphicon"
+                    [class.glyphicon-heart]="tUser.isLiked"
+                    [class.glyphicon-heart-empty]="!tUser.isLiked"
+                    [style.font-size]="'23px'"
+                    (click)="onTwitLike($event)"
+                    ></i>
+                    <span>{{ tUser.totalLikes }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
