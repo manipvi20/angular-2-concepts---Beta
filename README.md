@@ -2,7 +2,7 @@
 
 This repository contains following concepts in Angular 2 (Beta version) and Typescript.
 
-1.All basic concepts like Directives and custom directives, Data bindings, Event Binding, Pipes, Operators, Attributes
+1.All basic concepts like Directives and custom directives, Data bindings, Event Binding, Pipes, Operators, Attributes <br>
 2.Voter Component
 3.Twitter Component
 4.Routings
